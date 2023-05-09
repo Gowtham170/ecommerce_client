@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.product {
+    padding-block: 1rem;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    padding-bottom: 3rem;
+    gap: 1.6rem;
+    font-size: $font-size-xs;
+}
+
+.product-card {
+    padding: 2rem;
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.product-image {
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 1rem;
+}
+
+.product-details {
+    padding-top: .5rem;
+}

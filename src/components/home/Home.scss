@@ -1,0 +1,13 @@
+@import '../../index.scss';
+
+.home {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home-title {
+    font-size: $font-size-md;
+}

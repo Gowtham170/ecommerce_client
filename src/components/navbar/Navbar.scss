@@ -1,0 +1,23 @@
+@import '../../index.scss';
+
+.navbar {
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    // color: $light-color;
+    background-color: $secondary-background-color;
+}
+
+.nav {
+    gap: 1.5rem;
+    font-size: $font-size-xs;
+    color: $light-color-alt;
+}
+
+.nav-item {
+    gap: .5rem;
+}
+
+.nav-item:hover {
+    color: $light-color;
+}
