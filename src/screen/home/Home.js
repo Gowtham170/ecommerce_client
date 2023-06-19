@@ -1,4 +1,4 @@
-import Products from '../../screen/products/Products';
+import Products from '../../components/products/Products'
 import './Home.scss';
 
 const Home = () => {

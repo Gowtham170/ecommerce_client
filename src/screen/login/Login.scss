@@ -1,0 +1,67 @@
+@import '../../index.scss';
+
+.form-container {
+    padding-block: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 50rem;
+    height: 100%;
+    padding: 3.7rem 3rem;
+    border-radius: .6rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.form-title {
+    padding-inline-start: 2rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $secondary-background-color;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2rem;
+    padding-block: .4rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-bottom: .5rem;
+    padding-left: .3rem;
+}
+
+.form-control {
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    border: 1.2px solid;
+    border-radius: 0.6rem;
+    margin-top: .6rem;
+}
+
+.action-btn {
+    background-color: $secondary-background-color;
+    color: $light-color;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    padding: .6rem 1.2rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.new-customer-link {
+    padding-inline-start: 2rem;
+    padding-top: 2rem;
+}
+
+.new-customer-link > a:hover {
+    text-decoration: underline;
+}

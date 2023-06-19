@@ -1,6 +1,6 @@
 import './ProductPreview.scss';
 // import products from '../../dummy_data/data';
-import Rating from '../../screen/rating/Rating';
+import Rating from '../../components/rating/Rating';
 import { Link, useParams } from 'react-router-dom';
 import { useGetProductDetailsQuery } from '../../redux/slices/api/productsApiSlice';
 

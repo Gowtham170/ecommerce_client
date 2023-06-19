@@ -8,8 +8,9 @@ import {
   Navbar, 
   Home, 
   ProductPreview,
-  Cart
-} from './components/index';
+  Cart,
+  Login
+} from './screen/index';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/' element={<Home/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/product/:id' element={<ProductPreview/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </Router>
 
