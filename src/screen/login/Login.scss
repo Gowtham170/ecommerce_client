@@ -1,7 +1,7 @@
 @import '../../index.scss';
 
 .form-container {
-    padding-block: 7.5rem;
+    padding-block: 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,6 +55,14 @@
     padding: .6rem 1.2rem;
     margin-top: 1rem;
     margin-left: 2rem;
+}
+
+.action-btn:hover {
+    transform: scale(1.02);
+}
+
+.action-btn:disabled {
+    background-color: gray;
 }
 
 .new-customer-link {

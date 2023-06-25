@@ -1,24 +1,38 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import toast from 'react-hot-toast';
 import './Login.scss';
 
-import { loginSchema } from '../../validation/schema';
-
-const initialValues = {
-    email: '',
-    password: ''
-}
+import { useLoginMutation } from '../../redux/slices/api/userApiSlice';
+import { setCredentials } from '../../redux/slices/authSlice';
 
 const Login = () => {
 
-    // const login = useFormik({
-    //     initialValues,
-    //     validationSchema: loginSchema,
+    const [values, setValues] = useState({
+        email: '',
+        password: ''
+    });
 
-    // });
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const [values, setValues] = useState({initialValues});
+    const  [login, {isLoading}] = useLoginMutation();
+
+    const { userInfo } = useSelector((state) => state.auth);
+
+    const { search } = useLocation();
+    const searchParams = new URLSearchParams(search);
+    const redirect = searchParams.get('redirect') || '/';
+
+
+    /* checking for the login info if it exists 
+      then redirect to the home page */ 
+    useEffect(() => {
+        if(userInfo) {
+            navigate(redirect);
+        }
+    }, [userInfo, redirect, navigate]);
 
     const onChangeHandler = (e) => {
         setValues({
@@ -27,8 +41,16 @@ const Login = () => {
         });
     }
 
-    const onSubmitHandler = () => {
-
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            const res =  await login({email: values.email, password: values.password }).unwrap();
+            console.log(res);
+            dispatch(setCredentials({...res, }));
+            navigate(redirect);
+        } catch (err) {
+            toast.error(err?.data?.message || err.error);
+        }
     }
 
     return (
@@ -59,13 +81,22 @@ const Login = () => {
                         value={values.password}
                         onChange={onChangeHandler} />
                 </div>
-                <button className='btn action-btn'>Sign in</button>
+                <button className='btn action-btn' 
+                    type='submit'
+                    disabled={isLoading}>
+                    Sign in
+                </button>
+                {isLoading && <div>Loading...</div>}
                 <div className='new-customer-link'>
-                    New customer ? <Link to='/cart'>Register</Link>
+                    New customer ? <Link to={redirect 
+                        ? `/cart?redirect=${redirect}` 
+                        : '/cart'}>
+                        Register
+                    </Link>
                 </div>
             </form>
         </div>
     );
 }
 
-export default Login
+export default Login;

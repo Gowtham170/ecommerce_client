@@ -3,6 +3,7 @@ import './ProductPreview.scss';
 import Rating from '../../components/rating/Rating';
 import { Link, useParams } from 'react-router-dom';
 import { useGetProductDetailsQuery } from '../../redux/slices/api/productsApiSlice';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 const ProductPreview = () => {
 
@@ -42,7 +43,12 @@ const ProductPreview = () => {
                                 <span className='table-value'>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
                                 <hr style={{ marginBlock: '.7rem' }} />
                             </div>
-                            <button className='btn' type='button' disabled={product.countInStock === 0}>Add to Cart</button>
+                            <button className='btn' 
+                                type='button' 
+                                disabled={product.countInStock === 0}
+                                onClick={addToCartHandler}>
+                                    Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>

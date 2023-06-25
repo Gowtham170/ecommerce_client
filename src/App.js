@@ -4,6 +4,7 @@ import {
   Route 
 } from 'react-router-dom';
 
+import { Toaster } from 'react-hot-toast';
 import { 
   Navbar, 
   Home, 
@@ -15,6 +16,14 @@ import {
 const App = () => {
   return (
     <div className='container'>
+      <Toaster
+        position='top-right'
+        toastOptions={{
+          style: {
+            fontSize: '1rem'
+          }
+        }}
+      />
       <Router>
         <Navbar/>
         <Routes> 
