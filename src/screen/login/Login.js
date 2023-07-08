@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import './Login.scss';
@@ -17,17 +17,17 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const  [login, {isLoading}] = useLoginMutation();
+    const  [login, { isLoading }] = useLoginMutation();
 
     const { userInfo } = useSelector((state) => state.auth);
 
     const { search } = useLocation();
     const searchParams = new URLSearchParams(search);
     const redirect = searchParams.get('redirect') || '/';
+    console.log(redirect)
 
 
-    /* checking for the login info if it exists 
-      then redirect to the home page */ 
+    /* checking for the login info if it exists then redirect to the home page */ 
     useEffect(() => {
         if(userInfo) {
             navigate(redirect);
@@ -44,8 +44,7 @@ const Login = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res =  await login({email: values.email, password: values.password }).unwrap();
-            console.log(res);
+            const res =  await login({email: values.email, password: values.password}).unwrap();
             dispatch(setCredentials({...res, }));
             navigate(redirect);
         } catch (err) {
@@ -64,6 +63,7 @@ const Login = () => {
                     </label>
                     <input id='email'
                         name='email'
+                        placeholder='eg: example@gmail.com'
                         className='form-control'
                         type='email'
                         value={values.email}
@@ -76,6 +76,7 @@ const Login = () => {
                     </label>
                     <input id='password'
                         name='password'
+                        placeholder='eg: john@123'
                         className='form-control'
                         type='password'
                         value={values.password}
@@ -89,8 +90,8 @@ const Login = () => {
                 {isLoading && <div>Loading...</div>}
                 <div className='new-customer-link'>
                     New customer ? <Link to={redirect 
-                        ? `/cart?redirect=${redirect}` 
-                        : '/cart'}>
+                        ? `/register?redirect=${redirect}` 
+                        : '/register'}>
                         Register
                     </Link>
                 </div>

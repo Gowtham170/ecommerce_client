@@ -3,6 +3,8 @@ import Home from "./home/Home";
 import ProductPreview from "./product_preview/ProductPreview";
 import Cart from "./cart/Cart";
 import Login from "./login/Login";
+import Register from "./register/Register";
+import ShippingScreen from "./shipping_screen/ShippingScreen";
 
 export { 
     Navbar, 
@@ -10,4 +12,6 @@ export {
     ProductPreview, 
     Cart,
     Login,
+    Register,
+    ShippingScreen
 };

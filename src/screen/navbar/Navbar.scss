@@ -1,10 +1,9 @@
 @import '../../index.scss';
 
 .navbar {
-    padding: 2rem 13rem;
+    padding: 2rem 12rem;
     display: flex;
     justify-content: space-between;
-    // color: $light-color;
     background-color: $secondary-background-color;
 }
 
@@ -12,10 +11,34 @@
     gap: 2rem;
     font-size: $font-size-xs;
     color: $light-color-alt;
+    position: relative;
+}
+
+.badge {
+    background-color: #c67605;
+    position: absolute;
+    top: -7px;
+    left: 6px;
+    font-size: 1rem;
+    color: white;
+    padding-left: 5px;
+    padding-right: 4.4px;
+    border-radius: 9px;
+}
+
+.profile-btn {
+    color: $light-color-alt;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+option {
+    color: $secondary-background-color;
 }
 
 .nav-item {
-    gap: .8rem;
+    gap: .9rem;
 }
 
 .nav-item:hover {

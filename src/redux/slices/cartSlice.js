@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { isCompositeComponent } from "react-dom/test-utils";
-import { json } from "react-router-dom";
 
 const initialState = localStorage.getItem('cart') 
-            ? JSON.parse(localStorage.getItem('cart'))
-            : {cartItems:[]}
+        ? JSON.parse(localStorage.getItem('cart'))
+        : {cartItems:[], shippingAddress: {}, paymentMethod: 'PayPal'}
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -13,8 +11,9 @@ const cartSlice = createSlice({
         addToCart: (state, action) => {
             const item = action.payload;
             const existItem = state.cartItems.find(
-                (current_item) => current_item._id === item.id
+                (current_item) => current_item._id === item._id
             );
+        
             if(existItem) {
                 state.cartItems = 
                     state.cartItems.map(
@@ -28,16 +27,22 @@ const cartSlice = createSlice({
             state.itemsPrice = state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
 
             // calculate tax price (10%)
-            state.taxPrice = Number(state.itemsPrice * 0.10).toFixed(2);
-
+            state.taxPrice = Number((0.10 * state.itemsPrice).toFixed(2));
+        
             // calculate totalprice
-            state.totalPrice = Number(state.itemsPrice + state.taxPrice).toFixed(2);
+            state.totalPrice = Number(((state.itemsPrice) + (state.taxPrice))).toFixed(2);
 
             localStorage.setItem('cart', JSON.stringify(state));
+        },
+        removeFromCart: (state, action) => {
+            state.cartItems = state.cartItems.filter((current_item) => current_item._id !== action.payload);
+        },
+        saveShippingAddress: (state, action) => {
+            state.shippingAddress = action.payload;
         }
     }
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, saveShippingAddress } = cartSlice.actions;
 
 export default cartSlice.reducer;

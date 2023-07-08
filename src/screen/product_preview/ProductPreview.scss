@@ -1,19 +1,22 @@
 @import '../../index.scss';
 
 .preview-container {
-    padding: 3rem 13rem;
+    padding: 3rem 12rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 96%;
 }
 
-.back-btn {
-    font-size: 1.4rem;
-}
-
-.back-btn:hover {
-    text-decoration: underline;
+.goback-btn {
+    background-color: $secondary-background-color;
+    border-radius: 0.5rem;
+    color: $light-color;
+    font-size: 1.1rem;
+    // margin-bottom: 1rem;
+    // margin-left: 1rem;
+    padding: .8rem;
 }
 
 .preview {
@@ -42,10 +45,11 @@
 }
 
 .table {
-    border: 1px solid black;
+    border: 1px solid gray;
     width: 19vw;
     height: auto;
     padding: 1rem 2rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
     
 .table-col {
@@ -56,20 +60,27 @@
     padding-left: 3.5rem;
 }
 
+.table-col select {
+    margin-left: 5.2rem;
+    padding: .5rem .8rem;
+}
+
 .table {
     button {
         background-color: $secondary-background-color;
+        border-radius: 0.5rem;
         color: $light-color;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         margin-bottom: 1rem;
-        margin-left: 1rem;
-        padding: .5rem;
-        width: 90%;
+        // margin-left: 1rem;
+        padding: .8rem;
+        //width: 90%;
     }
 }
 
 .table {
     button:disabled {
         background-color: gray;
+        cursor: not-allowed;
     }
 }

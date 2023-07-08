@@ -10,8 +10,11 @@ import {
   Home, 
   ProductPreview,
   Cart,
-  Login
+  Login,
+  Register,
+  ShippingScreen
 } from './screen/index';
+import PrivateRoute from './components/private_route/PrivateRoute';
 
 const App = () => {
   return (
@@ -31,6 +34,10 @@ const App = () => {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/product/:id' element={<ProductPreview/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route element={<PrivateRoute/>}>
+            <Route path='/shipping' element={<ShippingScreen/>}/>
+          </Route>
         </Routes>
       </Router>
 
