@@ -1,54 +1,40 @@
-import React from 'react'
+import './Form.scss';
+import { Link } from 'react-router-dom';
+import Button from '../button/Button';
 
-const Form = ({ className, onSubmit, }) => {
+const Form = ({ className, title, formLabel, values, onChange, onSubmit, children, disabled, redirect }) => {
+
     return (
-        // <FormControl>
-        //     <InputLabel htmlFor="my-input">Email address</InputLabel>
-        //     <Input id="my-input" aria-describedby="my-helper-text" />
-        //     <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
-        // </FormControl>
-         <form className='login-form' onSubmit={onSubmitHandler}>
-         <div className='form-title btn'>Login</div>
-         <div className='form-group'>
-             <label htmlFor='email'
-                 className='form-label'>
-                 Email
-             </label>
-             <input id='email'
-                 name='email'
-                 placeholder='eg: example@gmail.com'
-                 className='form-control'
-                 type='email'
-                 value={values.email}
-                 onChange={onChangeHandler} />
-         </div>
-         <div className='form-group'>
-             <label htmlFor='password'
-                 className='form-label'>
-                 Password
-             </label>
-             <input id='password'
-                 name='password'
-                 placeholder='eg: john@123'
-                 className='form-control'
-                 type='password'
-                 value={values.password}
-                 onChange={onChangeHandler} />
-         </div>
-         <button className='btn action-btn' 
-             type='submit'
-             disabled={isLoading}>
-             Sign in
-         </button>
-         {isLoading && <div>Loading...</div>}
-         <div className='new-customer-link'>
-             New customer ? <Link to={redirect 
-                 ? `/register?redirect=${redirect}` 
-                 : '/register'}>
-                 Register
-             </Link>
-         </div>
-     </form>
+        <form className={className} onSubmit={onSubmit}>
+            <div className='form-title btn'>{title}</div>
+            {formLabel.map((fl) => (
+                <div className='form-group' key={fl}>
+                    <label htmlFor={fl}
+                        className='form-label'>
+                        {fl}
+                    </label>
+                    <input id={fl}
+                        name={fl}
+                        placeholder='eg: example@gmail.com'
+                        className='form-control'
+                        type={(fl === 'Email' && 'email') || (fl === 'Password' && 'Password')}
+                        value={values.email}
+                        onChange={onChange} />
+                </div>
+            ))}
+            <Button children={children}
+                type='submit'
+                className='btn action-btn'
+                disabled={disabled}></Button>
+            {disabled && <div>Loading...</div>}
+            <div className='new-customer-link'>
+                New customer ? <Link to={redirect
+                    ? `/register?redirect=${redirect}`
+                    : '/register'}>
+                    Register
+                </Link>
+            </div>
+        </form>
     );
 }
 

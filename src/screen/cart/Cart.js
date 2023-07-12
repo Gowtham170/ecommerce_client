@@ -69,6 +69,7 @@ const Cart = () => {
           <div className='total-price'>&#8377;{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}</div>
           <hr style={{ marginBlock: '.7rem' }} /> 
           <Button children='Proceed To Ckeckout'
+              type='button'
               className='btn checkout-btn'
               disabled={cartItems.length === 0}
               onClick={navigateToCheckout}/>

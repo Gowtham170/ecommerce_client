@@ -45,7 +45,7 @@ const Navbar = () => {
                                 {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                             </span>
                         )}
-                        <span className='nav-link'>Cart</span>
+                        <span className='nav-link   '>Cart</span>
                     </li>
                 </Link>
                 {userInfo

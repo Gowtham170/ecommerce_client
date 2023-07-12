@@ -5,6 +5,7 @@ import Cart from "./cart/Cart";
 import Login from "./login/Login";
 import Register from "./register/Register";
 import ShippingScreen from "./shipping_screen/ShippingScreen";
+import Payment from "./payment/Payment";
 
 export { 
     Navbar, 
@@ -13,5 +14,6 @@ export {
     Cart,
     Login,
     Register,
-    ShippingScreen
+    ShippingScreen,
+    Payment
 };

@@ -12,7 +12,8 @@ import {
   Cart,
   Login,
   Register,
-  ShippingScreen
+  ShippingScreen,
+  Payment
 } from './screen/index';
 import PrivateRoute from './components/private_route/PrivateRoute';
 
@@ -37,18 +38,10 @@ const App = () => {
           <Route path='/register' element={<Register/>}/>
           <Route element={<PrivateRoute/>}>
             <Route path='/shipping' element={<ShippingScreen/>}/>
+            <Route path='/payment' element={<Payment/>}/>
           </Route>
         </Routes>
       </Router>
-
-      {/* <Router>
-        <Routes>
-          <Route element={<PrivateRoutes/>}>
-            <Route path='/' element={<Home/>}/>
-          </Route>
-          <Route path='/auth' element={<Auth/>}/>
-        </Routes>
-      </Router> */}
     </div>
   )
 }

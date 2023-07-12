@@ -1,0 +1,27 @@
+.payment-form {
+    width: 62rem;
+    height: 100%;
+    padding: 2.5rem 3rem;
+}
+
+.select-method {
+    padding-left: 2rem;
+    font-weight: 600;
+}
+
+.payment-form .form-group {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+input[type="radio"] {
+    accent-color: rgb(5, 165, 5);
+  }
+
+.payment-method-label {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    padding-left: .5rem;
+}

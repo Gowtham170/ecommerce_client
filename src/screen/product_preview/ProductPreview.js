@@ -69,6 +69,7 @@ const ProductPreview = () => {
                              </div>
                             )}
                             <Button children='Add to Cart'
+                                type='button'
                                 className='btn' 
                                 onClick={addToCartHandler}
                                 disabled={product.countInStock === 0}/>

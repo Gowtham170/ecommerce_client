@@ -1,0 +1,28 @@
+// .shipping-screen-container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+.shipping-from{
+    width: 62rem;
+    height: 100%;
+    padding: 2rem 3rem;
+}
+
+.shipping-from .form-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.shipping-from .action-btn {
+    padding: .8rem 1rem;
+}
+
+.shipping-from .form-group {
+    padding-block: 0;
+}
+
+.shipping-from .form-label {
+    padding-bottom: 0.5rem;
+}
