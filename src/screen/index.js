@@ -6,6 +6,7 @@ import Login from "./login/Login";
 import Register from "./register/Register";
 import ShippingScreen from "./shipping_screen/ShippingScreen";
 import Payment from "./payment/Payment";
+import PlaceOrder from "./place_order/PlaceOrder"; 
 
 export { 
     Navbar, 
@@ -15,5 +16,6 @@ export {
     Login,
     Register,
     ShippingScreen,
-    Payment
+    Payment,
+    PlaceOrder
 };

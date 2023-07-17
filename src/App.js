@@ -13,7 +13,8 @@ import {
   Login,
   Register,
   ShippingScreen,
-  Payment
+  Payment,
+  PlaceOrder
 } from './screen/index';
 import PrivateRoute from './components/private_route/PrivateRoute';
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route element={<PrivateRoute/>}>
             <Route path='/shipping' element={<ShippingScreen/>}/>
             <Route path='/payment' element={<Payment/>}/>
+            <Route path='/placeorder' element={<PlaceOrder/>}/>
           </Route>
         </Routes>
       </Router>
