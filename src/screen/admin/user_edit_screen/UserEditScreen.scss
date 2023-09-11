@@ -1,0 +1,12 @@
+.checkbox {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  
+.checkbox input {
+    position: absolute;
+    top:  -1px;
+    left: 0;
+  }

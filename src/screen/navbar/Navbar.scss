@@ -1,4 +1,6 @@
-@import '../../index.scss';
+// @import '../../index.scss';
+
+@import '../../sass/variables';
 
 .navbar {
     padding: 2rem 12rem;
@@ -43,4 +45,34 @@ option {
 
 .nav-item:hover {
     color: $light-color;
+}
+
+.menu-item {
+    // height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: .3rem;
+    transition: background-color .25s;
+    padding: .2rem .6rem;
+}
+
+.menu-item:hover {
+    background-color: rgba($color: #000000, $alpha: .2);
+}
+
+.dropdown {
+    position: absolute;
+    top: 2.2rem;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    border: .5px solid gray;
+    border-radius: .5rem;
+    // transform: translateX(-45%);
+    color: $secondary-background-color;
+    background-color: $light-color;
+    left: 7rem;
+}
+
+.admin-dropdown {
+    left: 17.5rem;
 }

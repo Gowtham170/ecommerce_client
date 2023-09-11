@@ -6,7 +6,7 @@ import { useGetProductsQuery } from '../../redux/slices/api/productsApiSlice';
 const Products = () => {
 
   const { data: products, isLoading, error } = useGetProductsQuery();
-
+  
   return (
     <>
       {isLoading ? (

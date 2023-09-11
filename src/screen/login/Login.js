@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import './Login.scss';
 
 import Button from '../../components/button/Button';
 import { useLoginMutation } from '../../redux/slices/api/userApiSlice';
 import { setCredentials } from '../../redux/slices/authSlice';
+import './Login.scss';
 
 const Login = () => {
 
@@ -17,6 +17,11 @@ const Login = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const formValues = [
+        { label: 'Email', name: 'email', type: 'email', value: `${values.email}`, placeholder: 'eg: example@gmail.com' },
+        { label: 'Password', name: 'password', type: 'password', value: `${values.password}`, placeholder: 'eg: john@123' },
+    ]
 
     const [login, { isLoading }] = useLoginMutation();
 
@@ -48,6 +53,7 @@ const Login = () => {
             navigate(redirect);
         } catch (err) {
             toast.error(err?.data?.message || err.error);
+            console.log(err);
         }
     }
 
@@ -55,33 +61,22 @@ const Login = () => {
         <div className='login-container form-container'>
             <form className='login-form' onSubmit={onSubmitHandler}>
                 <div className='form-title btn'>Login</div>
-                <div className='form-group'>
-                    <label htmlFor='email'
-                        className='form-label'>
-                        Email
-                    </label>
-                    <input id='email'
-                        name='email'
-                        placeholder='eg: example@gmail.com'
-                        className='form-control'
-                        type='email'
-                        value={values.email}
-                        onChange={onChangeHandler} />
-                </div>
-                <div className='form-group'>
-                    <label htmlFor='password'
-                        className='form-label'>
-                        Password
-                    </label>
-                    <input id='password'
-                        name='password'
-                        placeholder='eg: john@123'
-                        className='form-control'
-                        type='password'
-                        value={values.password}
-                        onChange={onChangeHandler} />
-                </div>
-                <Button children='Sign in'
+                {formValues.map((fv) => (
+                    <div className='form-group' key={fv.name}>
+                        <label htmlFor={fv.name}
+                            className='form-label'>
+                            {fv.label}
+                        </label>
+                        <input id={fv.name}
+                            name={fv.name}
+                            placeholder={fv.placeholder}
+                            className='form-control'
+                            type={fv.type}
+                            value={fv.value}
+                            onChange={onChangeHandler} />
+                    </div>
+                ))}
+                <Button children='Login'
                     type='submit'
                     className='btn action-btn'
                     disabled={isLoading} />

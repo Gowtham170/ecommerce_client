@@ -39,7 +39,7 @@ const ProductPreview = () => {
                         <h3 className='preview-name'>{product.name}</h3>
                         <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                         <div className='preview-price'>
-                            <strong>Price: &#8377; {product.price}</strong>
+                            <strong>Price: ${product.price}</strong>
                         </div>
                         <div>Description: {product.description}</div>
                     </div>
@@ -47,7 +47,7 @@ const ProductPreview = () => {
                         <div className='table'>
                             <div className='table-col'>
                                 <span>Price:</span>
-                                <span className='table-value'>&#8377;{product.price}</span>
+                                <span className='table-value'>${product.price}</span>
                                 <hr style={{ marginBlock: '.7rem' }} />
                             </div>
                             <div className='table-col'>

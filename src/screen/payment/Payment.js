@@ -43,6 +43,7 @@ const Payment = () => {
                             name='payment-method'
                             className='form-control btn'
                             type='radio'
+                            checked
                         />
                         <label htmlFor='payment-method'
                             className="payment-method-label btn">

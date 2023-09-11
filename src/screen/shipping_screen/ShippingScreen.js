@@ -11,7 +11,6 @@ const ShippingScreen = () => {
 
     const cart = useSelector((state) => state.cart);
     const { shippingAddress } = cart;
-
     
     const [values, setValues] = useState({
         address: shippingAddress?.address || '',
@@ -50,17 +49,17 @@ const ShippingScreen = () => {
                 <form className='shipping-from' onSubmit={onSubmitHandler}>
                     <div className='form-title btn'>Shipping</div>
                     {formValues.map((fv) => (
-                        <div className='form-group' key={`${fv.name}`}>
-                            <label htmlFor={`${fv.name}`}
+                        <div className='form-group' key={fv.name}>
+                            <label htmlFor={fv.name}
                                 className='form-label'>
-                                {`${fv.label}`}
+                                {fv.label}
                             </label>
-                            <input id={`${fv.name}`}
-                                name={`${fv.name}`}
+                            <input id={fv.name}
+                                name={fv.name}
                                 className='form-control'
-                                type={`${fv.type}`}
-                                pattern={`${fv.pattern}`}
-                                value={`${fv.value}`}
+                                type={fv.type}
+                                pattern={fv.pattern}
+                                value={fv.value}
                                 onChange={onChangeHandler} />
                         </div>
                     ))}

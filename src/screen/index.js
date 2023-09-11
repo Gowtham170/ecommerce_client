@@ -7,6 +7,13 @@ import Register from "./register/Register";
 import ShippingScreen from "./shipping_screen/ShippingScreen";
 import Payment from "./payment/Payment";
 import PlaceOrder from "./place_order/PlaceOrder"; 
+import OrderScreen from "./order_screen/OrderScreen";
+import Profile from "./profile/Profile";
+import OrderListScreen from "./admin/order_list_screen/OrderListScreen";
+import ProductListScreen from "./admin/product_list_screen/ProductListScreen";
+import UserListScreen from "./admin/user_list_screen/UserListScreen";
+import ProductEditScreen from "./admin/product_edit_screen/ProductEditScreen";
+import UserEditScreen from "./admin/user_edit_screen/UserEditScreen";
 
 export { 
     Navbar, 
@@ -17,5 +24,12 @@ export {
     Register,
     ShippingScreen,
     Payment,
-    PlaceOrder
+    PlaceOrder,
+    OrderScreen,
+    Profile,
+    OrderListScreen,
+    ProductListScreen,
+    UserListScreen,
+    ProductEditScreen,
+    UserEditScreen
 };

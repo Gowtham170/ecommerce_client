@@ -1,4 +1,6 @@
-@import '../../index.scss';
+// @import '../../index.scss';
+
+@import '../../sass/variables';
 
 .preview-container {
     padding: 3rem 12rem;
@@ -45,10 +47,10 @@
 }
 
 .table {
-    border: 1px solid gray;
+
     width: 19vw;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 2.2rem 2rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
     

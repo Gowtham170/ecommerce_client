@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import { addToCart, removeFromCart } from '../../redux/slices/cartSlice';
 import Button from '../../components/button/Button';
+import Message from '../../components/message/Message';
 //import cartItems from '../../dummy_data/data';
 
 const Cart = () => {
@@ -34,7 +35,7 @@ const Cart = () => {
         <span className='cart-title'>Shopping cart</span>
         {cartItems.length === 0
           ? (
-            <div className='message'> Your cart is empty <Link to='/'>Go Back</Link></div>
+            <Message children={`Your cart is empty`} className='message'/>
           ) : (
             <div className='cart'>
               {cartItems.map((item) => (
@@ -66,7 +67,7 @@ const Cart = () => {
           )}
         <div className='price-calculation'>
           <h5 className='sub-total'> Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h5>
-          <div className='total-price'>&#8377;{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}</div>
+          <div className='total-price'>${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}</div>
           <hr style={{ marginBlock: '.7rem' }} /> 
           <Button children='Proceed To Ckeckout'
               type='button'

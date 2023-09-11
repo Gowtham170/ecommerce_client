@@ -14,9 +14,17 @@ import {
   Register,
   ShippingScreen,
   Payment,
-  PlaceOrder
+  PlaceOrder,
+  OrderScreen,
+  Profile,
+  OrderListScreen,
+  ProductListScreen,
+  UserListScreen,
+  ProductEditScreen,
+  UserEditScreen
 } from './screen/index';
-import PrivateRoute from './components/private_route/PrivateRoute';
+import PrivateRoute from './utils/PrivateRoute';
+import AdminRoute from './utils/AdminRoute';
 
 const App = () => {
   return (
@@ -41,6 +49,15 @@ const App = () => {
             <Route path='/shipping' element={<ShippingScreen/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/placeorder' element={<PlaceOrder/>}/>
+            <Route path='/order/:id' element={<OrderScreen/>}/>
+            <Route path='/profile' element={<Profile/>}/>
+          </Route>
+          <Route element={<AdminRoute/>}>
+            <Route path='/admin/orderlist' element={<OrderListScreen/>}/>
+            <Route path='/admin/productlist' element={<ProductListScreen/>}/>
+            <Route path='/admin/userlist' element={<UserListScreen/>}/>
+            <Route path='/admin/product/:id/edit' element={<ProductEditScreen/>}/>
+            <Route path='/admin/user/:id/edit' element={<UserEditScreen/>}/>
           </Route>
         </Routes>
       </Router>

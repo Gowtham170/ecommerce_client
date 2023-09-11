@@ -1,0 +1,22 @@
+// @import '../../index.scss';
+
+.delivery-message {
+    background-color: #FADBD8;
+    border-radius: 0.4rem;
+    color: #B93D30;
+    grid-column: 1/3;
+    height: 5rem;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    // margin-top: 1.5rem;
+    // margin-left: 3rem;
+    padding: 1.5rem 2rem;
+}
+
+.success {
+    background-color: #07ebbd52;
+    color: #08755f;
+}
+
+// #18bc9b7a
+// #18bc9c

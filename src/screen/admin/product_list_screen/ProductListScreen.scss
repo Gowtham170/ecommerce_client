@@ -1,0 +1,20 @@
+@import '../../../sass/variables';
+
+.create-product-wrapper {
+    padding: 2rem 16rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-product-btn {
+    background-color: $secondary-background-color;
+    border-radius: 0.6rem;
+    color: $light-color;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.text-hover {
+    text-overflow: ellipsis;
+}

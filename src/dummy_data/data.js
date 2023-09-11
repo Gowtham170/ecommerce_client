@@ -1,6 +1,6 @@
 import airpods from './images/airpods.jpg';
 import phone from './images/phone.jpg';
-import camers from './images/camera.jpg';
+import camera from './images/camera.jpg';
 import ps from './images/playstation.jpg';
 import mouse from './images/mouse.jpg';
 import alexa from './images/alexa.jpg';
@@ -35,7 +35,7 @@ const products = [
     {
       _id: '3',
       name: 'Cannon EOS 80D DSLR Camera',
-      image: camers,
+      image: camera,
       description:
         'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
       brand: 'Cannon',
