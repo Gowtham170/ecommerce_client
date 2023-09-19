@@ -6,8 +6,11 @@ const UPLOAD_URL = process.env.REACT_APP_UPLOAD_URL;
 export const productsApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getProducts: builder.query({
-            query: () => ({
+            query: ({keyword}) => ({
                 url: PRODUCTS_URL,
+                params: {
+                    keyword
+                }
             }),
             providesTags: ['Product'],
             keepUnusedDataFor: 5
@@ -46,6 +49,20 @@ export const productsApiSlice = apiSlice.injectEndpoints({
                 method: 'DELETE'
             })
         }),
+        createReview: builder.mutation({
+            query: (data) => ({
+                url: `${PRODUCTS_URL}/${data.productId}/reviews`,
+                method: 'POST',
+                body: data,
+            }),
+            invalidatesTags: ['Product']
+        }),
+        getTopProducts: builder.query({
+            query: () => ({
+                url: `${PRODUCTS_URL}/top`,
+            }),
+            keepUnusedDataFor: 5,
+        })
     })
 });
 
@@ -55,5 +72,7 @@ export const {
     useCreateProductMutation,
     useUpdateProductMutation,
     useUploadProductImageMutation,
-    useDeleteProdutMutation
+    useDeleteProdutMutation,
+    useCreateReviewMutation,
+    useGetTopProductsQuery
 } = productsApiSlice;

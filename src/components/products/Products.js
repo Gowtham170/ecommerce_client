@@ -1,12 +1,11 @@
-import './Products.scss';
-//import products from '../../dummy_data/data';
 import Product from '../product/Product';
 import { useGetProductsQuery } from '../../redux/slices/api/productsApiSlice';
+import './Products.scss';
 
-const Products = () => {
+const Products = ({ keyword }) => {
 
-  const { data: products, isLoading, error } = useGetProductsQuery();
-  
+  const { data: products, isLoading, error } = useGetProductsQuery({ keyword });
+
   return (
     <>
       {isLoading ? (

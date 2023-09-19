@@ -86,3 +86,73 @@
         cursor: not-allowed;
     }
 }
+
+.review {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    // width: 96%;
+    padding: 2.5rem 12rem;
+}
+
+.review .no-review-message {
+    background-color:#b6d6ef;
+    // background-color: #D6EAF8;
+    border-radius: 0.4rem;
+    color:#146fdd;
+    // color: #1F5B83;
+    height: 5rem;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem;
+}
+
+.review-form {
+    padding-block: 1.5rem;
+}
+
+.review-form .form-group {
+    padding-inline: 0;
+}
+
+.review-form .form-control {
+    margin-bottom: 2rem;
+}
+
+.review-container {
+    padding-top: 2rem;
+}
+
+.comment {
+    padding-top: 2rem;
+}
+
+.review-form textarea {
+    // padding: 3rem;
+    height: 8rem;
+}
+
+.submit-btn {
+    background-color: $secondary-background-color;
+    color: $light-color;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    padding: .8rem;
+    margin-top: 1rem;
+    margin-left: 0;
+    width: 8rem;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+.action-btn:disabled {
+    background-color: gray;
+}
+
+.review .message {
+    margin-left: 0;
+    margin-block: 2rem;
+}

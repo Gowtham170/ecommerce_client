@@ -40,7 +40,8 @@ const App = () => {
       <Router>
         <Navbar/>
         <Routes> 
-          <Route path='/' element={<Home/>}/>
+          <Route index={true} path='/' element={<Home/>}/>
+          <Route path='/search/:keyword' element={<Home/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/product/:id' element={<ProductPreview/>}/>
           <Route path='/login' element={<Login/>}/>

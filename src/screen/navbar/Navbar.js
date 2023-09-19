@@ -3,14 +3,14 @@ import {
     FaUser,
     FaShoppingCart,
 } from 'react-icons/fa';
-
 import { MdArrowDropDownCircle } from 'react-icons/md'
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import './Navbar.scss';
 
+import SearchBox from '../../components/search_box/SearchBox';
 import { logout } from '../../redux/slices/authSlice';
 import { useLogoutMutation } from '../../redux/slices/api/userApiSlice';
+import './Navbar.scss';
 
 const Navbar = () => {
 
@@ -41,6 +41,7 @@ const Navbar = () => {
                 <Link to='/'>Ecommerce</Link>
             </h5>
             <ul className='nav place-items-center'>
+                <SearchBox/>
                 <Link to='/cart'>
                     <li className='nav-item btn place-items-center'>
                         <FaShoppingCart />

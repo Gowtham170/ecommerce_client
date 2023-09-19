@@ -6,6 +6,7 @@
     padding: 2rem 12rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: $secondary-background-color;
 }
 
@@ -19,8 +20,8 @@
 .badge {
     background-color: #c67605;
     position: absolute;
-    top: -7px;
-    left: 6px;
+    top: 0px;
+    right: 22rem;
     font-size: 1rem;
     color: white;
     padding-left: 5px;
