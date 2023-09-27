@@ -66,43 +66,45 @@ const ProductPreview = () => {
                         <img src={product.image} alt={product.name} className='preview-image' />
                         <div className='preview-details'>
                             <h3 className='preview-name'>{product.name}</h3>
+                            <hr style={{ marginBlock: '2rem' }} />
                             <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+                            <hr style={{ marginBlock: '2rem' }} />
                             <div className='preview-price'>
                                 <strong>Price: ${product.price}</strong>
                             </div>
-                            <div>Description: {product.description}</div>
+                            <hr style={{ marginBlock: '2rem' }} />
+                            <div className='preview-description'><strong>Description: </strong>{product.description}</div>
                         </div>
                         <div className='add-to-cart'>
-                            <div className='table'>
+                            <div className='table d-grid'>
                                 <div className='table-col'>
-                                    <span>Price:</span>
-                                    <span className='table-value'>${product.price}</span>
-                                    <hr style={{ marginBlock: '.7rem' }} />
+                                    <div className='table-padding'>Price:</div>
+                                    <hr/>
+                                    <div className='table-padding'>Stock:</div>
+                                    <hr/>
+                                    <div className='table-padding'>Qty:</div>
+                                    <hr/>
                                 </div>
-                                <div className='table-col'>
-                                    <span>Stock:</span>
-                                    <span className='table-value'>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-                                    <hr style={{ marginBlock: '.7rem' }} />
-                                </div>
-                                {product.countInStock > 0 && (
-                                    <div className='table-col'>
-                                        <span>Qty:</span>
-                                        <select className='btn' value={qty} onChange={(e) => setQty(Number(e.target.value))}>
+                                <div className='table-value'>
+                                    <div className='table-padding'><strong>${product.price}</strong></div>
+                                    <hr/>
+                                    <div className='table-padding'>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</div>
+                                    <hr/>
+                                    <select className='btn qty' value={qty} onChange={(e) => setQty(Number(e.target.value))}>
                                             {[...Array(product.countInStock).keys()].map((current_value) => (
                                                 <option key={current_value + 1} value={current_value + 1}>
                                                     {current_value + 1}
                                                 </option>
                                             ))}
-                                        </select>
-                                        <hr style={{ marginBlock: '.7rem' }} />
-                                    </div>
-                                )}
-                                <Button children='Add to Cart'
+                                    </select>
+                                    <hr/>
+                                </div>
+                            </div>
+                            <Button children='Add to Cart'
                                     type='button'
-                                    className='btn'
+                                    className='btn add-to-cart-btn'
                                     onClick={addToCartHandler}
                                     disabled={product.countInStock === 0} />
-                            </div>
                         </div>
                     </div>
                 )}
@@ -175,3 +177,37 @@ const ProductPreview = () => {
 }
 
 export default ProductPreview;
+
+
+ {/* <div className='add-to-cart'>
+                            <div className='table'>
+                                <div className='table-col'>
+                                    <span>Price:</span>
+                                    <span className='table-value'>${product.price}</span>
+                                </div>
+                                <hr/>
+                                <div className='table-col'>
+                                    <span>Stock:</span>
+                                    <span className='table-value'>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
+                                </div>
+                                <hr/>
+                                {product.countInStock > 0 && (
+                                    <div className='table-col'>
+                                        <span>Qty:</span>
+                                        <select className='btn' value={qty} onChange={(e) => setQty(Number(e.target.value))}>
+                                            {[...Array(product.countInStock).keys()].map((current_value) => (
+                                                <option key={current_value + 1} value={current_value + 1}>
+                                                    {current_value + 1}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
+                                <hr/>
+                                <Button children='Add to Cart'
+                                    type='button'
+                                    className='btn'
+                                    onClick={addToCartHandler}
+                                    disabled={product.countInStock === 0} />
+                            </div>
+                        </div> */}

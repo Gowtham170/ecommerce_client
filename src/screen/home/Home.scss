@@ -3,7 +3,7 @@
 @import '../../sass/variables';
 
 .home {
-    padding: 2rem 13rem;
+    padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,3 +17,21 @@
 .home .goback-btn {
     margin-bottom: 1rem;
 }
+
+
+// before change
+// .home {
+//     padding: 2rem 13rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+// }
+
+// .home-title {
+//     font-size: $font-size-md;
+// }
+
+// .home .goback-btn {
+//     margin-bottom: 1rem;
+// }

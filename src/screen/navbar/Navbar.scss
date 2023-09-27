@@ -1,43 +1,62 @@
-// @import '../../index.scss';
-
 @import '../../sass/variables';
 
 .navbar {
-    padding: 2rem 12rem;
+    padding: 2rem 3rem;
+    background-color: $secondary-background-color;
+    width: 100%;
+    // position: fixed;
+}
+
+.nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $secondary-background-color;
+    // padding-bottom: 1.3rem;
+}
+
+.menu {
+    color: $light-color;
+    font-size: 3.5rem;
+    border: 1px solid $light-color;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 4rem;
+}
+
+.menu:hover {
+    color: $light-color-alt;
+    border-color: $light-color-alt;
+    border-width: 2px;
+}
+
+.nav-wrapper {
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s ease-in;
+}
+
+.nav-wrapper.activated {
+    padding-top: 1.2rem;
+    opacity: 1;
+    transform: scale(1);
+    // box-shadow: 1px 1px 1rem $light-color;
+    height: fit-content;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 }
 
 .nav {
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.4rem;
     font-size: $font-size-xs;
     color: $light-color-alt;
     position: relative;
-}
-
-.badge {
-    background-color: #c67605;
-    position: absolute;
-    top: 0px;
-    right: 22rem;
-    font-size: 1rem;
-    color: white;
-    padding-left: 5px;
-    padding-right: 4.4px;
-    border-radius: 9px;
-}
-
-.profile-btn {
-    color: $light-color-alt;
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-
-option {
-    color: $secondary-background-color;
+    padding-top: 1.5rem;
 }
 
 .nav-item {
@@ -47,6 +66,29 @@ option {
 .nav-item:hover {
     color: $light-color;
 }
+
+.badge {
+    background-color: #c67605;
+    position: absolute;
+    top: .8rem;
+    left: .6rem;
+    font-size: 1rem;
+    color: white;
+    padding-left: 5px;
+    padding-right: 4.4px;
+    border-radius: 9px;
+}
+
+// .profile-btn {
+//     color: $light-color-alt;
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+// }
+
+// option {
+//     color: $secondary-background-color;
+// }
 
 .menu-item {
     // height: 50px;
@@ -62,18 +104,110 @@ option {
 }
 
 .dropdown {
-    position: absolute;
-    top: 2.2rem;
+    width: 100%;
     padding: .5rem 1rem;
-    overflow: hidden;
     border: .5px solid gray;
     border-radius: .5rem;
     // transform: translateX(-45%);
     color: $secondary-background-color;
     background-color: $light-color;
-    left: 7rem;
+    transition: all .1s;
 }
 
 .admin-dropdown {
     left: 17.5rem;
 }
+
+// before  change
+// .navbar {
+//     padding: 2rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     background-color: $secondary-background-color;
+// }
+
+// // .navbar {
+// //     padding: 2rem 12rem;
+// //     display: flex;
+// //     justify-content: space-between;
+// //     align-items: center;
+// //     background-color: $secondary-background-color;
+// // }
+
+// // .nav {
+// //     gap: 2rem;
+// //     font-size: $font-size-xs;
+// //     color: $light-color-alt;
+// //     position: relative;
+// // }
+
+// .nav {
+//     flex-direction: column;
+//     gap: 2rem;
+//     font-size: $font-size-xs;
+//     color: $light-color-alt;
+//     position: relative;
+// }
+
+// .badge {
+//     background-color: #c67605;
+//     position: absolute;
+//     top: 0px;
+//     left: 26.7rem;
+//     font-size: 1rem;
+//     color: white;
+//     padding-left: 5px;
+//     padding-right: 4.4px;
+//     border-radius: 9px;
+// }
+
+// .profile-btn {
+//     color: $light-color-alt;
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+// }
+
+// option {
+//     color: $secondary-background-color;
+// }
+
+// .nav-item {
+//     gap: .9rem;
+// }
+
+// .nav-item:hover {
+//     color: $light-color;
+// }
+
+// .menu-item {
+//     // height: 50px;
+//     display: flex;
+//     align-items: center;
+//     border-radius: .3rem;
+//     transition: background-color .25s;
+//     padding: .2rem .6rem;
+// }
+
+// .menu-item:hover {
+//     background-color: rgba($color: #000000, $alpha: .2);
+// }
+
+// .dropdown {
+//     position: absolute;
+//     top: 2.2rem;
+//     padding: .5rem 1rem;
+//     overflow: hidden;
+//     border: .5px solid gray;
+//     border-radius: .5rem;
+//     // transform: translateX(-45%);
+//     color: $secondary-background-color;
+//     background-color: $light-color;
+//     left: 7rem;
+// }
+
+// .admin-dropdown {
+//     left: 17.5rem;
+// }

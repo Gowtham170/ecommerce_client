@@ -3,7 +3,8 @@ import {
     FaUser,
     FaShoppingCart,
 } from 'react-icons/fa';
-import { MdArrowDropDownCircle } from 'react-icons/md'
+import { MdArrowDropDownCircle } from 'react-icons/md';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ import './Navbar.scss';
 const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false);
+    const [openActionMenu, setOpenAcionMenu] = useState(false);
     const [openAdminMenu, setOpenAdminMenu] = useState(false);
 
     const { cartItems } = useSelector((state) => state.cart);
@@ -37,6 +39,85 @@ const Navbar = () => {
 
     return (
         <nav className='navbar'>
+            <div className='nav-menu btn'>
+                <h5 className='title btn'>
+                    <Link to='/'>Ecommerce</Link>
+                </h5>
+                <AiOutlineMenu className='menu' onClick={() => setOpenMenu(!openMenu)} />
+            </div>
+            <div className={openMenu ? 'nav-wrapper activated' : 'nav-wrapper'}>
+                <SearchBox />
+                <ul className='nav'>
+                    {/* <SearchBox/> */}
+                    <Link to='/cart'>
+                        <li className='nav-item btn place-items-center'>
+                            <FaShoppingCart />
+                            {cartItems.length > 0 && (
+                                <span className='badge'>
+                                    {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                                </span>
+                            )}
+                            <span className='nav-link'>Cart</span>
+                        </li>
+                    </Link>
+                    {userInfo
+                        ? (<>
+                            <li className='nav-item btn place-items-center' onClick={() => setOpenAcionMenu(!openActionMenu)}>
+                                {userInfo?.name}
+                                <MdArrowDropDownCircle />
+
+                                {/* {openActionMenu &&
+                                    <div className='dropdown'>
+                                        <div className='menu-item'>Profile</div>
+                                        <div className='menu-item' onClick={logoutHandler}>Logout</div>
+                                    </div>
+                                } */}
+                            </li>
+                            {openActionMenu &&
+                                <div className='dropdown'>
+                                    <div className='menu-item'>Profile</div>
+                                    <div className='menu-item' onClick={logoutHandler}>Logout</div>
+                                </div>
+                            }</>
+                        )
+                        : (<Link to='/login'>
+                            <li className='nav-item btn place-items-center'>
+                                <FaUser />
+                                <span className='nav-link'>Sign In</span>
+                            </li>
+                        </Link>)
+                    }
+                    {userInfo && userInfo.isAdmin && (
+                        <>
+                            <li className='nav-item btn place-items-center' onClick={() => setOpenAdminMenu(!openAdminMenu)}>
+                                Admin
+                                <MdArrowDropDownCircle />
+                            </li>
+                            {openAdminMenu &&
+                                <div className='dropdown admin-dropdown'>
+                                    <div className='menu-item'>
+                                        <Link to='/admin/userlist'>Users</Link>
+                                    </div>
+                                    <div className='menu-item'>
+                                        <Link to='/admin/orderlist'>Orders</Link>
+                                    </div>
+                                    <div className='menu-item'>
+                                        <Link to='/admin/productlist'>Products</Link>
+                                    </div>
+                                </div>}
+                        </>
+                    )}
+                </ul>
+            </div>
+        </nav>
+    );
+}
+
+export default Navbar;
+
+
+
+{/* <nav className='navbar'>
             <h5 className='title btn'>
                 <Link to='/'>Ecommerce</Link>
             </h5>
@@ -95,36 +176,4 @@ const Navbar = () => {
                     </li>
                 )}
             </ul>
-        </nav>
-    );
-}
-
-export default Navbar;
-
-
-{/* {userInfo
-                    ? (
-                        <select defaultValue={`${userInfo.name}`}
-                            onChange={(e) => e.target.value === 'logout'
-                                ? logoutHandler()
-                                : console.log(e.target.value)} className='btn profile-btn'>
-                            <option value={`${userInfo.name}`} disabled hidden>{userInfo.name}</option>
-                            <option value='profile'>Profile</option>
-                            <option value='logout'>Logout</option>
-                        </select>
-                    )
-                    : (<Link to='/login'>
-                        <li className='nav-item btn place-items-center'>
-                            <FaUser />
-                            <span className='nav-link'>Sign In</span>
-                        </li>
-                    </Link>)} */}
-
- {/* {userInfo && userInfo.isAdmin
-                    && (
-                        <select defaultValue={`${userInfo.name}`} className='btn profile-btn'
-                            onChange={navigateOrderScreen}>
-                            <option value={`${userInfo.name}`} disabled hidden>Admin</option>
-                            <option value='/admin/orderlist'>Orders</option>
-                        </select>
-                    )} */}
+        </nav> */}

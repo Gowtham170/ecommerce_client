@@ -4,8 +4,17 @@
 
 .product {
     padding-block: 1rem;
-    grid-template-columns: repeat(5, minmax(0,1fr));
+    // grid-template-columns: repeat(1, minmax(0,1fr));
     padding-bottom: 3rem;
-    gap: 1.6rem;
+    gap: 4rem;
     font-size: $font-size-xs;
 }
+
+// before change
+// .product {
+//     padding-block: 1rem;
+//     grid-template-columns: repeat(5, minmax(0,1fr));
+//     padding-bottom: 3rem;
+//     gap: 1.6rem;
+//     font-size: $font-size-xs;
+// }

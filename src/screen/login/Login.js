@@ -58,8 +58,9 @@ const Login = () => {
     }
 
     return (
-        <div className='login-container form-container'>
+        <div className='login-container'>
             <form className='login-form' onSubmit={onSubmitHandler}>
+                <>
                 <div className='form-title btn'>Login</div>
                 {formValues.map((fv) => (
                     <div className='form-group' key={fv.name}>
@@ -88,6 +89,7 @@ const Login = () => {
                         Register
                     </Link>
                 </div>
+                </>
             </form>
         </div>
     );

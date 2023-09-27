@@ -21,7 +21,8 @@ import {
   ProductListScreen,
   UserListScreen,
   ProductEditScreen,
-  UserEditScreen
+  UserEditScreen,
+  Navigation
 } from './screen/index';
 import PrivateRoute from './utils/PrivateRoute';
 import AdminRoute from './utils/AdminRoute';

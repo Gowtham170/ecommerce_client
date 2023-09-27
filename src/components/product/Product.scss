@@ -2,23 +2,25 @@
 
 
 .product-card {
-    padding: 2rem ;
+    padding: 2rem;
     width: 100%;
+    border-radius: .6rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .product-image {
     width: 100%;
+    border-radius: .6rem;
     object-fit: cover;
     padding-bottom: 1rem;
 }
 
 .product-details {
-    padding-top: .5rem;
+    padding-top: 1rem;
 }
 
 .product-name {
-    padding-bottom: .7rem;
+    padding-bottom: 1rem;
 }
 
 .product-name:hover {
