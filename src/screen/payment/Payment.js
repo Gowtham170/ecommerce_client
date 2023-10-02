@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,9 @@ import './Payment.scss';
 
 const Payment = () => {
 
-    const [paymentMethod, setPaymentMthod] = useState('PayPal');
+    // const [paymentMethod, setPaymentMthod] = useState('PayPal');
+
+    const paymentMethod = 'PayPal'
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

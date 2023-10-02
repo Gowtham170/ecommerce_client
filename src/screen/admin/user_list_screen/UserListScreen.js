@@ -8,8 +8,6 @@ import {
   useDeleteUserMutation,
 } from '../../../redux/slices/api/userApiSlice';
 import Message from '../../../components/message/Message';
-import Button from '../../../components/button/Button';
-import './UserListScreen.scss';
 
 const UserListScreen = () => {
 

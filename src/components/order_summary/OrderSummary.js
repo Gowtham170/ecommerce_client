@@ -1,5 +1,4 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
-import toast from 'react-hot-toast';
 
 import Button from '../../components/button/Button';
 import './OrderSummary.scss';

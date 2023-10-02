@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -6,29 +7,17 @@ import './ProductCarousel.scss';
 
 const ProductCarousel = () => {
 
-    const { data: products, isLoading, error } = useGetTopProductsQuery();
+    const { data: products } = useGetTopProductsQuery();
 
     return (
-
-        <Carousel className="main-slide">
+        <Carousel className="main-slide"
+        dynamicHeight>
             {products?.map((product) => (
-                <div>
-                  <img src={product.image} className="product-image"/>
-                  <p className="legend">{product.name}</p>
-                </div>
+                <Fragment key={product.name}>
+                    <img src={product.image} alt={product.name} className="product-image" />
+                    <p className="legend">{product.name}</p>
+                </Fragment>
             ))}
-            {/* <div>
-                <img src="assets/1.jpeg" />
-                <p className="legend">Legend 1</p>
-            </div>
-            <div>
-                <img src="assets/2.jpeg" />
-                <p className="legend">Legend 2</p>
-            </div>
-            <div>
-                <img src="assets/3.jpeg" />
-                <p className="legend">Legend 3</p>
-            </div> */}
         </Carousel>
     );
 }

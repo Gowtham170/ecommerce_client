@@ -1,11 +1,11 @@
-import './Cart.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
+
 import { addToCart, removeFromCart } from '../../redux/slices/cartSlice';
 import Button from '../../components/button/Button';
 import Message from '../../components/message/Message';
-//import cartItems from '../../dummy_data/data';
+import './Cart.scss';
 
 const Cart = () => {
 
@@ -39,7 +39,7 @@ const Cart = () => {
           <div className='cart'>
             {cartItems.map((item) => (
               <div className='cart-wrapper'>
-                <img src={item.image} className='cart-image' ></img>
+                <img src={item.image} className='cart-image' alt={item.name}></img>
                 <Link to={`/product/${item._id}`} className='cart-name'>{item.name}</Link>
                 <p className='cart-price'>&#8377;{item.price}</p>
                 <div className='action-area'>

@@ -17,7 +17,6 @@ const ProductPreview = () => {
 
     const { id: productId } = useParams();
 
-
     const [qty, setQty] = useState(1);
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
@@ -177,37 +176,3 @@ const ProductPreview = () => {
 }
 
 export default ProductPreview;
-
-
- {/* <div className='add-to-cart'>
-                            <div className='table'>
-                                <div className='table-col'>
-                                    <span>Price:</span>
-                                    <span className='table-value'>${product.price}</span>
-                                </div>
-                                <hr/>
-                                <div className='table-col'>
-                                    <span>Stock:</span>
-                                    <span className='table-value'>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span>
-                                </div>
-                                <hr/>
-                                {product.countInStock > 0 && (
-                                    <div className='table-col'>
-                                        <span>Qty:</span>
-                                        <select className='btn' value={qty} onChange={(e) => setQty(Number(e.target.value))}>
-                                            {[...Array(product.countInStock).keys()].map((current_value) => (
-                                                <option key={current_value + 1} value={current_value + 1}>
-                                                    {current_value + 1}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                )}
-                                <hr/>
-                                <Button children='Add to Cart'
-                                    type='button'
-                                    className='btn'
-                                    onClick={addToCartHandler}
-                                    disabled={product.countInStock === 0} />
-                            </div>
-                        </div> */}

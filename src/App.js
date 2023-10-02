@@ -16,13 +16,11 @@ import {
   Payment,
   PlaceOrder,
   OrderScreen,
-  Profile,
   OrderListScreen,
   ProductListScreen,
   UserListScreen,
   ProductEditScreen,
-  UserEditScreen,
-  Navigation
+  UserEditScreen
 } from './screen/index';
 import PrivateRoute from './utils/PrivateRoute';
 import AdminRoute from './utils/AdminRoute';
@@ -52,7 +50,6 @@ const App = () => {
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/placeorder' element={<PlaceOrder/>}/>
             <Route path='/order/:id' element={<OrderScreen/>}/>
-            <Route path='/profile' element={<Profile/>}/>
           </Route>
           <Route element={<AdminRoute/>}>
             <Route path='/admin/orderlist' element={<OrderListScreen/>}/>

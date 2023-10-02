@@ -1,46 +1,35 @@
-// .back-btn-container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-
 .product-edit-screen {
-    padding-block: 2rem;
+  padding-block: 2rem;
 }
 
 .product-edit-screen .goback-btn {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
 .product-edit-screen .shipping-from {
   margin-top: 2rem;
 }
 
-
 input[type=file] {
-    border: 1.2px solid;
-    border-radius: .6rem;
-    margin-bottom: 1rem;
-    padding: .8rem;
+  border: 1.2px solid;
+  border-radius: .6rem;
+  margin-bottom: 1rem;
+  padding: .8rem;
 }
 
 input[type=file]::file-selector-button {
-    margin-right: 20px;
-    width: 8rem;
-    border: none;
-    background: #084cdf;
-    padding: .9rem 1rem;
-    font-size: 1rem;
-    border-radius: .6rem;
-    color: #fff;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
+  margin-right: 20px;
+  width: 8rem;
+  border: none;
+  background: #084cdf;
+  padding: .9rem 1rem;
+  font-size: 1rem;
+  border-radius: .6rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
 }
-  
-  input[type=file]::file-selector-button:hover {
-    background: #0d45a5;
-  }
-// .product-edit-screen {
-//     flex-direction: column;
-// }
 
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}

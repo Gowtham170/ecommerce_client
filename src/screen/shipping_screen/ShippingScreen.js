@@ -45,7 +45,6 @@ const ShippingScreen = () => {
     return (
         <>
             <CheckoutSteps step1 step2 />
-            {/* <div className='form-container'> */}
             <form className='shipping-from' onSubmit={onSubmitHandler}>
                 <div className='form-title btn'>Shipping</div>
                 {formValues.map((fv) => (
@@ -69,59 +68,8 @@ const ShippingScreen = () => {
                     disabled={''} />
                 {/* {isLoading && <div>Loading...</div>} */}
             </form>
-            {/* </div> */}
         </>
     );
 }
 
 export default ShippingScreen;
-
-
-{/* <div className='form-group'>
-                    <label htmlFor='email'
-                        className='form-label'>
-                        Address
-                    </label>
-                    <input id='email'
-                        name='email'
-                        className='form-control'
-                        type='text'
-                        value={''}
-                        onChange={''} />
-                </div>
-                <div className='form-group'>
-                    <label htmlFor='password'
-                        className='form-label'>
-                        City
-                    </label>
-                    <input id='password'
-                        name='password'
-                        className='form-control'
-                        type='password'
-                        value={''}
-                        onChange={''} />
-                </div>
-                <div className='form-group'>
-                    <label htmlFor='password'
-                        className='form-label'>
-                        Postal Code
-                    </label>
-                    <input id='password'
-                        name='password'
-                        className='form-control'
-                        type='number'
-                        value={''}
-                        onChange={''} />
-                </div>
-                <div className='form-group'>
-                    <label htmlFor='password'
-                        className='form-label'>
-                        Country
-                    </label>
-                    <input id='password'
-                        name='password'
-                        className='form-control'
-                        type='password'
-                        value={''}
-                        onChange={''} />
-                </div> */}
