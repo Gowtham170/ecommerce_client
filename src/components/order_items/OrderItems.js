@@ -10,14 +10,12 @@ const OrderItems = ({ items }) => {
             {(items.length !== 0) ? (
                 <div className='order-items-wrapper'>
                     <h2>Order Items</h2>
-                    <div className='order-item d-grid'>
+                    <div className='order-item'>
                         {items.map((item) => (
                             <Fragment key={item.name}>
-                                {/* <span className='item'> */}
-                                <img src={item.image} className='item-image' />
+                                <img src={item.image} className='item-image' alt={item.name}/>
                                 <Link to={`/product/${item._id}`} className='item-name'>{item.name}</Link>
                                 <span className='item-price'>{item.qty} x ${item.price} = ${item.qty * item.price}</span>
-                                {/* </span> */}
                             </Fragment>
                         ))}
                     </div>

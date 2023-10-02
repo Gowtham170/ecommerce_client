@@ -1,4 +1,3 @@
-//@import '../../index.scss';
 @import '../../../sass/variables';
 
 .form-title {
@@ -56,6 +55,6 @@
     padding-top: 2rem;
 }
 
-.new-customer-link > a:hover {
+.new-customer-link>a:hover {
     text-decoration: underline;
 }

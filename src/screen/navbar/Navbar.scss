@@ -1,43 +1,56 @@
-// @import '../../index.scss';
-
 @import '../../sass/variables';
 
 .navbar {
-    padding: 2rem 12rem;
+    padding: 2rem 3rem;
+    background-color: $secondary-background-color;
+    width: 100%;
+}
+
+.nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $secondary-background-color;
+}
+
+.menu {
+    color: $light-color;
+    font-size: 3.5rem;
+    border: 1px solid $light-color;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 4rem;
+}
+
+.menu:hover {
+    color: $light-color-alt;
+    border-color: $light-color-alt;
+    border-width: 2px;
+}
+
+.nav-wrapper {
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s ease-in;
+}
+
+.nav-wrapper.activated {
+    padding-top: 1.2rem;
+    opacity: 1;
+    transform: scale(1);
+    height: fit-content;
 }
 
 .nav {
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.4rem;
     font-size: $font-size-xs;
     color: $light-color-alt;
     position: relative;
-}
-
-.badge {
-    background-color: #c67605;
-    position: absolute;
-    top: 0px;
-    right: 22rem;
-    font-size: 1rem;
-    color: white;
-    padding-left: 5px;
-    padding-right: 4.4px;
-    border-radius: 9px;
-}
-
-.profile-btn {
-    color: $light-color-alt;
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-
-option {
-    color: $secondary-background-color;
+    padding-top: 1.5rem;
 }
 
 .nav-item {
@@ -48,8 +61,19 @@ option {
     color: $light-color;
 }
 
+.badge {
+    background-color: #c67605;
+    position: absolute;
+    top: .8rem;
+    left: .6rem;
+    font-size: 1rem;
+    color: white;
+    padding-left: 5px;
+    padding-right: 4.4px;
+    border-radius: 9px;
+}
+
 .menu-item {
-    // height: 50px;
     display: flex;
     align-items: center;
     border-radius: .3rem;
@@ -62,16 +86,13 @@ option {
 }
 
 .dropdown {
-    position: absolute;
-    top: 2.2rem;
-    padding: .5rem 1rem;
-    overflow: hidden;
+    width: 100%;
+    padding: .3rem 1rem;
     border: .5px solid gray;
     border-radius: .5rem;
-    // transform: translateX(-45%);
     color: $secondary-background-color;
     background-color: $light-color;
-    left: 7rem;
+    transition: all .1s;
 }
 
 .admin-dropdown {

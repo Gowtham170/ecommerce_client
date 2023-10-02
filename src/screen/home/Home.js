@@ -15,7 +15,7 @@ const Home = () => {
             Go Back
           </Link>
         )}
-        {/* <ProductCarousel/> */}
+        <ProductCarousel/>
         <span className='home-title'>Latest Products</span>
         <Products keyword={keyword}/>
     </div>

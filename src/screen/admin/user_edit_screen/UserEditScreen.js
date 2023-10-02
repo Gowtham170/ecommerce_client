@@ -56,7 +56,7 @@ const UserEditScreen = () => {
 
     return (
         <>
-            <div className='form-container product-edit-screen'>
+            <div className='product-edit-screen'>
                 <Link to='/admin/userlist' className='btn goback-btn'>Go Back</Link>
                 <form className='shipping-from' onSubmit={onSubmitHandler}>
                     <div className='form-title btn'>Edit User</div>

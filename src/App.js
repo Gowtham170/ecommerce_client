@@ -16,7 +16,6 @@ import {
   Payment,
   PlaceOrder,
   OrderScreen,
-  Profile,
   OrderListScreen,
   ProductListScreen,
   UserListScreen,
@@ -51,7 +50,6 @@ const App = () => {
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/placeorder' element={<PlaceOrder/>}/>
             <Route path='/order/:id' element={<OrderScreen/>}/>
-            <Route path='/profile' element={<Profile/>}/>
           </Route>
           <Route element={<AdminRoute/>}>
             <Route path='/admin/orderlist' element={<OrderListScreen/>}/>

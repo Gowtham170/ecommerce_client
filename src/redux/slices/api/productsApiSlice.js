@@ -10,7 +10,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
                 url: PRODUCTS_URL,
                 params: {
                     keyword
-                }
+                },
             }),
             providesTags: ['Product'],
             keepUnusedDataFor: 5

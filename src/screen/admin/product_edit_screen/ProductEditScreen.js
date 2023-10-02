@@ -15,14 +15,6 @@ const ProductEditScreen = () => {
 
     const { id: productId } = useParams();
 
-    // const [name, setName] = useState('');
-    // const [price, setPrice] = useState(0);
-    // const [image, setImage] = useState('');
-    // const [brand, setBrand] = useState('');
-    // const [category, setCategory] = useState('');
-    // const [countInStock, setCountInStock] = useState(0);
-    // const [description, setDescription] = useState('');
-
     const [values, setValues] = useState({
         name: '',
         price: 0,
@@ -37,7 +29,7 @@ const ProductEditScreen = () => {
 
     const [updateProduct, { isLoading: loadingUpdate }] = useUpdateProductMutation();
 
-    const [uploadProductImage, { isLoading: loadingUpl }] = useUploadProductImageMutation();
+    const [uploadProductImage] = useUploadProductImageMutation();
 
     const navigate = useNavigate();
 
@@ -49,31 +41,16 @@ const ProductEditScreen = () => {
         { label: 'Count In Stock', name: 'countInStock', type: 'Number', value: `${values.countInStock}` },
         { label: 'Category', name: 'category', type: 'text', value: `${values.category}` },
         { label: 'Description', name: 'description', type: 'text', value: `${values.description}` }
-
-        // { label: 'Name', name: 'name', type: 'text', pattern: "^[a-zA-Z]*$", value: `${values.name}` },
-        // { label: 'Price', name: 'price', type: 'Number', pattern: "[0-9]*", value: `${values.price}` },
-        // // { label: 'Image', name: 'postalCode', type: 'text', pattern: "[0-9]*", value: `${values.postalCode}` },
-        // { label: 'Brand', name: 'brand', type: 'text', pattern: "^[a-zA-Z]*$", value: `${values.brand}` },
-        // { label: 'Count In Stock', name: 'countInStock', type: 'text', pattern: "[0-9]*", value: `${values.countInStock}` },
-        // { label: 'Category', name: 'category', type: 'text', pattern: "^[a-zA-Z]*$", value: `${values.category}` },
-        // { label: 'Description', name: 'description', type: 'text', pattern: "^[a-zA-Z]*$", value: `${values.description}` }
     ]
 
     useEffect(() => {
         if (product) {
-            // setName(product.name);
-            // setPrice(product.price);
-            // setImage(product.image);
-            // setBrand(product.brand);
-            // setCategory(product.category);
-            // setCountInStock(product.countInStock);
-            // setDescription(product.description);
             setValues({
                 ...values,
                 ...product
             })
         }
-    }, [product]);
+    }, [product, values]);
 
     const onChangeHandler = (e) => {
         setValues({
@@ -104,7 +81,6 @@ const ProductEditScreen = () => {
 
     }
 
-    // console.log('hello'.substring)
     const uploadFileHandler = async (e) => {
         const formData = new FormData();
         formData.append('image', e.target.files[0]);
@@ -122,12 +98,8 @@ const ProductEditScreen = () => {
 
     return (
         <>
-            <div className='form-container product-edit-screen'>
+            <div className='product-edit-screen'>
                 <Link to='/admin/productlist' className='btn goback-btn'>Go Back</Link>
-                {/* <Button children='Go Back'
-                    type='submit'
-                    className='btn action-btn'
-                    disabled={''} /> */}
                 <form className='shipping-from' onSubmit={onSubmitHandler}>
                     <div className='form-title btn'>Edit Product</div>
                     {loadingUpdate && <div>Loading...</div>}

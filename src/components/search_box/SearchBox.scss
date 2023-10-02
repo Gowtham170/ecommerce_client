@@ -2,25 +2,27 @@
 
 .search-box-form {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .search-box-form .text-control {
     border: 1.2px solid white;
     background-color: white;
     color: $secondary-background-color;
+    font-size: $font-size-xs;
     border-radius: .6rem;
+    width: 85%;
     padding: 1rem;
 }
 
 .search-btn {
-    // background-color: $secondary-background-color;
     border: 1px solid #18BC9C;
     color: #18BC9C;
-    border-radius: .5rem;
-    // font-size: 1.2rem;
+    font-size: $font-size-xs;
+    border-radius: .6rem;
     padding: 1rem;
-    // margin-top: 1rem;
-    margin-left: 2rem;
+    margin-left: 1.4rem;
 }
 
 .search-btn:hover {

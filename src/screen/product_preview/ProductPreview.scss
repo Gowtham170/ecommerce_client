@@ -1,14 +1,11 @@
-// @import '../../index.scss';
-
 @import '../../sass/variables';
 
 .preview-container {
-    padding: 3rem 12rem;
+    padding: 3rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 96%;
 }
 
 .goback-btn {
@@ -16,92 +13,75 @@
     border-radius: 0.5rem;
     color: $light-color;
     font-size: 1.1rem;
-    // margin-bottom: 1rem;
-    // margin-left: 1rem;
     padding: .8rem;
 }
 
 .preview {
+    font-size: 1.2rem;
     padding-block: 2.5rem;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 2.5rem;
 }
 
 .preview-image {
     width: 100%;
-    grid-column: 1/3;
+    border-radius: .6rem;
 }
 
-.preview-details {
-    width: 100%;
-    grid-column: 3/5;
+.preview-name {
+    padding-top: 1.3rem;
 }
 
-.preview-name, .preview-price {
-    padding-block: 1.3rem;
+.preview-description {
+    text-align: left;
 }
 
 .add-to-cart {
-    grid-column: 5/-1;
-    width: 100%;
-}
-
-.table {
-
-    width: 19vw;
-    height: auto;
-    padding: 2.2rem 2rem;
+    height: fit-content;
+    margin-top: 1rem;
+    padding: 2rem 3rem;
+    border-radius: .6rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-    
-.table-col {
-    padding-bottom: 1rem;
-}
-    
-.table-value {
-    padding-left: 3.5rem;
-}
-
-.table-col select {
-    margin-left: 5.2rem;
-    padding: .5rem .8rem;
-}
 
 .table {
-    button {
-        background-color: $secondary-background-color;
-        border-radius: 0.5rem;
-        color: $light-color;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        // margin-left: 1rem;
-        padding: .8rem;
-        //width: 90%;
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 2rem;
 }
 
-.table {
-    button:disabled {
-        background-color: gray;
-        cursor: not-allowed;
-    }
+.table-padding {
+    padding-block: 1.5rem;
 }
+
+.qty {
+    padding: .4rem .8rem;
+    margin-block: 1.15rem;   
+}
+
+.add-to-cart-btn {
+    background-color: $secondary-background-color;
+    border-radius: 0.5rem;
+    color: $light-color;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding: .9rem;
+    width: 10rem;
+}
+
+.add-to-cart-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
 
 .review {
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: flex-start;
-    // width: 96%;
-    padding: 2.5rem 12rem;
+    padding: 2.5rem 3rem;
+    font-size: 1.2rem;
 }
 
 .review .no-review-message {
     background-color:#b6d6ef;
-    // background-color: #D6EAF8;
     border-radius: 0.4rem;
     color:#146fdd;
-    // color: #1F5B83;
     height: 5rem;
     font-size: 1.4rem;
     margin-top: 1.5rem;
@@ -129,7 +109,6 @@
 }
 
 .review-form textarea {
-    // padding: 3rem;
     height: 8rem;
 }
 
@@ -153,6 +132,6 @@
 }
 
 .review .message {
-    margin-left: 0;
     margin-block: 2rem;
+    height: fit-content;
 }

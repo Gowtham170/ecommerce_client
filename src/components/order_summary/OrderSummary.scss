@@ -1,16 +1,11 @@
-//@import '../../index.scss';
-
 @import '../../sass/variables';
 
 .order-summary {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     border-radius: .5rem;
-    grid-column: 3/-1;
-    width: 35rem;
     height: fit-content;
-    padding: 2rem 3rem;
-    margin-top: .5rem;
-    margin-left: 4rem;
+    padding: 2rem 2rem;
+    margin-bottom: 4rem;
 }
 
 .order-summary-title {
@@ -37,6 +32,6 @@
     cursor: not-allowed;
 }
 
-.paypal-btn {
-    margin-block: .5rem;
+.paypal-button {
+    width: auto;
 }

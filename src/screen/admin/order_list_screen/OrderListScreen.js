@@ -57,7 +57,7 @@ const OrderListScreen = () => {
         <Message children={error} className='message' />
       ) : (
         <div>
-          <div className='text-end'><input type='text'/></div>
+          {/* <div className='text-end'><input type='text'/></div> */}
           <DataTable
             columns={columns}
             data={data}

@@ -15,7 +15,7 @@ import './ProductListScreen.scss';
 
 const ProductListScreen = () => {
 
-    const { data: products, isLoading, error, refetch } = useGetProductsQuery();
+    const { data: products, isLoading, error, refetch } = useGetProductsQuery({});
 
     const [createProduct, { isLoading: loadingCreate }] = useCreateProductMutation();
 
@@ -40,16 +40,14 @@ const ProductListScreen = () => {
         { name: 'CATEGORY', selector: row => row.category },
         { name: 'BRAND', selector: row => row.brand },
         { name: 'ACTIONS', selector: row => row.actions },
-        // { name: 'EDIT', selector: row => row.edit },
-        // { name: 'DELETE', selector: row => row.delete }
     ]
 
     const data = products?.map((product) => ({
-        id: product._id,
-        name: product.name,
-        price: product.price,
-        category: product.category,
-        brand: product.brand,
+        id: product?._id,
+        name: product?.name,
+        price: product?.price,
+        category: product?.category,
+        brand: product?.brand,
         actions: (
             <>
                 <Link to={`/admin/product/${product._id}/edit`}>
@@ -57,8 +55,6 @@ const ProductListScreen = () => {
                 </Link> | <FaTrash style={{ color: 'red' }} onClick={() => deleteHandler(product._id)} />
             </>
         ),
-        // edit: (<Link to={`/admin/product/${product._id}`}><FaEdit/></Link>),
-        // delete: (<Link to={`/admin/product/${product._id}`}><FaTrash style={{ color: 'red' }}/></Link>)
     }))
 
     const customStyles = {
@@ -94,12 +90,10 @@ const ProductListScreen = () => {
                 {loadingDelete && <div>loading...</div>}
             </div>
             <div className='order-list-screen-container'>
-                {/* <h1 className='order-title'>Orders</h1> */}
                 {error ? (
                     <Message children={error} className='message' />
                 ) : (
                     <div>
-                        <div className='text-end'><input type='text' /></div>
                         <DataTable
                             columns={columns}
                             data={data}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../button/Button';
 import './SearchBox.scss';
@@ -7,7 +7,6 @@ import './SearchBox.scss';
 const SearchBox = () => {
 
     const navigate = useNavigate();
-    // const { keyword: urlKeyword } = useParams();
     const [keyword, setKeyword] = useState('');
 
     const onSubmitHandler = async (e) => {
@@ -31,27 +30,9 @@ const SearchBox = () => {
             />
             <Button children='Search'
                     type='submit'
-                    className='btn search-btn'
-                    // disabled={loadingProductReview} 
-                    />
+                    className='btn search-btn'/>
         </form>
     );
 }
 
 export default SearchBox;
-
-{/* <div className='form-group'>
-                <input id='comment'
-                    name='comment'
-                    className='form-control'
-                    type='text'
-                    placeholder='Search Products...'
-                    //value={}
-                    //onChange={} 
-                    />
-             </div>
-                <Button children='Search'
-                    type='submit'
-                    className='btn submit-btn'
-                    // disabled={loadingProductReview} 
-                    /> */}

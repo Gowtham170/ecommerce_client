@@ -1,24 +1,21 @@
-// @import '../../index.scss';
-
 @import '../../sass/variables';
 
 .login-container { 
-    padding-block: 7rem;
+    font-size: 1.4rem;
+    padding: 7rem 2rem;
 }
 
 .login-form {
-    width: 50rem;
-    height: 100%;
-    padding: 3.7rem 3rem;
+    padding: 2.5rem .2rem;
     border-radius: .6rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .form-title {
+    font-size: 2.2rem !important;
+    font-weight: bold;
     padding-inline-start: 2rem;
     padding-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 600;
     color: $secondary-background-color;
 }
 
@@ -31,7 +28,6 @@
 
 .form-label {
     display: block;
-    font-size: 1.4rem;
     font-weight: 400;
     padding-bottom: .5rem;
     padding-left: .3rem;

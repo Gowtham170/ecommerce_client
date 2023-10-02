@@ -1,11 +1,19 @@
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .payment-form {
-    width: 62rem;
-    height: 100%;
-    padding: 2.5rem 3rem;
+    font-size: 1.4rem;
+    padding-block: 1rem;
+}
+
+.payment-form .form-title {
+    padding-inline-start: 0;
 }
 
 .select-method {
-    padding-left: 2rem;
     font-weight: 600;
 }
 
@@ -13,11 +21,12 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-inline: 0;
 }
 
 input[type="radio"] {
     accent-color: rgb(5, 165, 5);
-  }
+}
 
 .payment-method-label {
     font-size: 1.4rem;
