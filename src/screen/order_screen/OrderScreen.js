@@ -4,9 +4,9 @@ import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 
-import { 
-    useGetOrderDetailsQuery, 
-    usePayOrderMutation, 
+import {
+    useGetOrderDetailsQuery,
+    usePayOrderMutation,
     useGetPayPalClientIdQuery,
     useDeliverOrderMutation
 } from '../../redux/slices/api/orderApiSlice';
@@ -23,18 +23,18 @@ const OrderScreen = () => {
 
     const { data: order, refetch, isLoading, error } = useGetOrderDetailsQuery(orderId);
 
-    const [ payOrder, {isLoading: loadingPay }] = usePayOrderMutation();
+    const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
 
-    const [ deliverOrder, {isLoading: loadingDeliver} ] = useDeliverOrderMutation();
+    const [deliverOrder, { isLoading: loadingDeliver }] = useDeliverOrderMutation();
 
-    const [ { isPending }, paypalDispatch ] = usePayPalScriptReducer();
+    const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
     const { data: paypal, isLoading: loadingPayPal, error: errorPayPal } = useGetPayPalClientIdQuery();
 
     const { userInfo } = useSelector((state) => state.auth);
 
     useEffect(() => {
-        if(!errorPayPal && !loadingPayPal && paypal.clientId) {
+        if (!errorPayPal && !loadingPayPal && paypal.clientId) {
             const loadPayPalScript = async () => {
                 paypalDispatch({
                     type: 'resetOptions',
@@ -43,23 +43,23 @@ const OrderScreen = () => {
                         currency: 'USD'
                     }
                 });
-                paypalDispatch({ 
-                    type: 'setLoadingStatus', 
+                paypalDispatch({
+                    type: 'setLoadingStatus',
                     value: 'pending'
                 })
             }
-            if(order && !order.isPaid) {
-                if(!window.paypal) {
-                    loadPayPalScript(); 
+            if (order && !order.isPaid) {
+                if (!window.paypal) {
+                    loadPayPalScript();
                 }
-            } 
+            }
         }
     }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-    function onApprove(data, actions) { 
+    function onApprove(data, actions) {
         return actions.order.capture().then(async function (details) {
             try {
-                await payOrder({orderId, details});
+                await payOrder({ orderId, details });
                 refetch();
                 toast.success('Payment successful');
             } catch (err) {
@@ -67,7 +67,7 @@ const OrderScreen = () => {
             }
         });
     }
-    function onError(err) { 
+    function onError(err) {
         toast.error(err.message);
     }
     function createOrder(data, actions) {
@@ -102,29 +102,30 @@ const OrderScreen = () => {
                 <>
                     <div className='d-grid place-order-container'>
                         <div className='product-summary'>
-                        <h1>Order {order._id}</h1>
+                            <h2 className='order_id'> Order {order._id}</h2>
                             <div className='product-summary-wrapper'>
-                                <Shipping shippingAddress={order.shippingAddress} 
-                                        user={order.user}/>
-                                        {order.isDelivered ? (
-                                            // <div>Delivered on {order.deliveredAt}</div>
-                                            <Message children={`Delivered on ${order.deliveredAt}`} className='delivery-message success'/>
-                                        ) : (
-                                            <Message children={'Not Delivered'} className='delivery-message'/>
-                                        )}
-                                <hr/>
+                                <Shipping shippingAddress={order.shippingAddress}
+                                    user={order.user} />
+                                {order.isDelivered ? (
+                                    // <div>Delivered on {order.deliveredAt}</div>
+                                    <Message children={`Delivered on ${order.deliveredAt}`} className='delivery-message success' />
+                                ) : (
+                                    <Message children={'Not Delivered'} className='delivery-message' />
+                                )}
+                                <hr />
                                 <PaymentMethod paymentMethod={order.paymentMethod} />
-                                        {order.isPaid ? (
-                                            // <div>Delivered on {order.deliveredAt}</div>
-                                            <Message children={`Paid on ${order.paidAt}`} className='delivery-message success'/>
-                                        ) : (
-                                            <Message children={'Not Paid'} className='delivery-message'/>
-                                        )}
-                                <hr/>
+                                {order.isPaid ? (
+                                    // <div>Delivered on {order.deliveredAt}</div>
+                                    <Message children={`Paid on ${order.paidAt}`} className='delivery-message success' />
+                                ) : (
+                                    <Message children={'Not Paid'} className='delivery-message' />
+                                )}
+                                <hr />
                                 <OrderItems items={order.orderItems} />
                             </div>
                         </div>
-                        <OrderSummary itemsPrice={order.itemsPrice}
+                        <div className='order-summary-wrapper'>
+                            <OrderSummary itemsPrice={order.itemsPrice}
                                 taxPrice={order.taxPrice}
                                 totalPrice={order.totalPrice}
                                 isPaid={order.isPaid}
@@ -136,7 +137,8 @@ const OrderScreen = () => {
                                 onError={onError}
                                 createOrder={createOrder}
                                 userInfo={userInfo}
-                                deliverOrderHandler={deliverOrderHandler}/>
+                                deliverOrderHandler={deliverOrderHandler} />
+                        </div>
                     </div>
                 </>
             )

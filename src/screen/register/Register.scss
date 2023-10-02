@@ -1,16 +1,17 @@
 .register-container { 
-    padding-block: 8rem;
+    padding: 7rem 2rem;
+    font-size: 1.4rem;
 }
 
 .register-container .login-form {
-    width: fit-content;
+    // width: fit-content;
 }
 
 .register-wrapper {
-    display: grid;   
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    // display: grid;   
+    // grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .register-container .form-control {
-    width: 21rem;
+    // width: 21rem;
 }

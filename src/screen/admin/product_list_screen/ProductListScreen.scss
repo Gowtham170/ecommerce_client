@@ -1,8 +1,9 @@
 @import '../../../sass/variables';
 
 .create-product-wrapper {
-    padding: 2rem 16rem;
+    padding: 2rem 2rem;
     display: flex;
+    font-size: 1rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -15,6 +16,6 @@
     padding: 1rem;
 }
 
-.text-hover {
-    text-overflow: ellipsis;
-}
+// .text-hover {
+//     text-overflow: ellipsis;
+// }

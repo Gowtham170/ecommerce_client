@@ -122,12 +122,8 @@ const ProductEditScreen = () => {
 
     return (
         <>
-            <div className='form-container product-edit-screen'>
+            <div className='product-edit-screen'>
                 <Link to='/admin/productlist' className='btn goback-btn'>Go Back</Link>
-                {/* <Button children='Go Back'
-                    type='submit'
-                    className='btn action-btn'
-                    disabled={''} /> */}
                 <form className='shipping-from' onSubmit={onSubmitHandler}>
                     <div className='form-title btn'>Edit Product</div>
                     {loadingUpdate && <div>Loading...</div>}

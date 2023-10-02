@@ -32,7 +32,7 @@ const Payment = () => {
     return (
         <>
             <CheckoutSteps step1 step2 step3 />
-            <div className='form-container'>
+            <div className='payment-container'>
                 <form className='payment-form' onSubmit={onSubmitHandler}>
                     <div className='form-title btn'>Payment Method</div>
                     <label className="select-method">

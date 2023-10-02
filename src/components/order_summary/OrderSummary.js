@@ -22,7 +22,7 @@ const OrderSummary = ({
     deliverOrderHandler
 }) => {
 
-   
+
 
     return (
         <div className='order-summary'>
@@ -53,33 +53,33 @@ const OrderSummary = ({
                     {isLoading && <div>Loading...</div>}
                 </>
             ) : (!isPaid ? (
+                <>
+                    {loadingPay && (<div>Loading...</div>)}
+                    {isPending ? (<div>Loading...</div>)
+                        : (
+                            <PayPalButtons
+                                className='paypal-button'
+                                createOrder={createOrder}
+                                onApprove={onApprove}
+                                onError={onError}></PayPalButtons>
+                        )
+                    }
+                </>
+            ) : (
+                userInfo &&
+                userInfo.isAdmin &&
+                isPaid &&
+                !isDelivered &&
+                deliverOrderHandler && (
                     <>
-                        {loadingPay && (<div>Loading...</div>)}
-                        {isPending ? (<div>Loading...</div>)
-                            : (
-                                <PayPalButtons
-                                    className='paypal-btn'
-                                    createOrder={createOrder}
-                                    onApprove={onApprove}
-                                    onError={onError}></PayPalButtons>
-                            )
-                        }
-                    </>
-                ) : (
-                       userInfo && 
-                       userInfo.isAdmin && 
-                       isPaid && 
-                       !isDelivered && 
-                       deliverOrderHandler && (
-                        <>
                         <Button children='Mark As Delivered'
                             type='button'
                             className='btn place-order-btn'
                             onClick={deliverOrderHandler} />
                         {isLoading && <div>Loading...</div>}
                     </>
-                   )
                 )
+            )
             )}
         </div>
     );

@@ -1,11 +1,14 @@
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 import Message from '../../../components/message/Message';
 import { useGetOrdersQuery } from '../../../redux/slices/api/orderApiSlice';
 import Button from '../../../components/button/Button';
 import './OrderListScreen.scss';
+import { useState } from 'react';
 
 const OrderListScreen = () => {
 
@@ -57,7 +60,7 @@ const OrderListScreen = () => {
         <Message children={error} className='message' />
       ) : (
         <div>
-          <div className='text-end'><input type='text'/></div>
+          {/* <div className='text-end'><input type='text'/></div> */}
           <DataTable
             columns={columns}
             data={data}

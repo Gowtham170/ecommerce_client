@@ -66,25 +66,25 @@ const Register = () => {
   }
 
   return (
-    <div className='register-container form-container'>
+    <div className='register-container'>
       <form className='login-form' onSubmit={onSubmitHandler}>
-      <div className='form-title btn'>Sign Up</div>
-      <div className='register-wrapper'>
-        {formValues.map((fv) => (
-          <div className='form-group' key={fv.name}>
-            <label htmlFor={fv.name}
-              className='form-label'>
-              {fv.label}
-            </label>
-            <input id={fv.name}
-              name={fv.name}
-              placeholder={fv.placeholder}
-              className='form-control'
-              type={fv.type}
-              value={fv.value}
-              onChange={onChangeHandler} />
-          </div>
-        ))}
+        <div className='form-title btn'>Sign Up</div>
+        <div className='register-wrapper d-grid'>
+          {formValues.map((fv) => (
+            <div className='form-group' key={fv.name}>
+              <label htmlFor={fv.name}
+                className='form-label'>
+                {fv.label}
+              </label>
+              <input id={fv.name}
+                name={fv.name}
+                placeholder={fv.placeholder}
+                className='form-control'
+                type={fv.type}
+                value={fv.value}
+                onChange={onChangeHandler} />
+            </div>
+          ))}
         </div>
         <Button children='Login'
           type='submit'
@@ -92,7 +92,7 @@ const Register = () => {
           disabled={isLoading} />
         {isLoading && <div>Loading...</div>}
         <div className='new-customer-link'>
-          Already have a account ? <Link to={redirect
+          Already have a account? <Link to={redirect
             ? `/login?redirect=${redirect}`
             : '/login'}>
             Login

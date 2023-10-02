@@ -19,6 +19,8 @@ const Navbar = () => {
     const [openActionMenu, setOpenAcionMenu] = useState(false);
     const [openAdminMenu, setOpenAdminMenu] = useState(false);
 
+    // console.log(openActionMenu)
+    // console.log(openAdminMenu)
     const { cartItems } = useSelector((state) => state.cart);
     const { userInfo } = useSelector((state) => state.auth);
 

@@ -14,10 +14,12 @@
 }
 
 .form-title {
+    font-size: 2.2rem !important;
+    font-weight: bold;
     padding-inline-start: 2rem;
     padding-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 600;
+    //font-size: 2rem;
+    //font-weight: 600;
     color: $secondary-background-color;
 }
 

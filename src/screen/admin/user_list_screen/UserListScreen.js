@@ -86,6 +86,7 @@ const UserListScreen = () => {
             pagination
             highlightOnHover
             striped
+            dense
             responsive
             customStyles={customStyles} />
         </div>

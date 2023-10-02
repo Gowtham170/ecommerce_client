@@ -10,7 +10,7 @@ const OrderItems = ({ items }) => {
             {(items.length !== 0) ? (
                 <div className='order-items-wrapper'>
                     <h2>Order Items</h2>
-                    <div className='order-item d-grid'>
+                    <div className='order-item'>
                         {items.map((item) => (
                             <Fragment key={item.name}>
                                 {/* <span className='item'> */}

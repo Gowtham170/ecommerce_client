@@ -1,15 +1,19 @@
 @import '../../../sass/variables';
 
 .order-list-screen-container {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
 }
 
 .order-title {
-    
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .details-btn {

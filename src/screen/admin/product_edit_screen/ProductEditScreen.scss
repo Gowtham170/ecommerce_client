@@ -5,16 +5,17 @@
 // }
 
 .product-edit-screen {
-    flex-direction: column;
-    padding-top: 2rem;
-    justify-content: center;
-    align-items: center;
+    padding-block: 2rem;
 }
 
-.product-edit-screen>*:first-child {
-    align-self: flex-start;
-    margin-left: 12rem;
+.product-edit-screen .goback-btn {
+    margin-left: 3rem;
 }
+
+.product-edit-screen .shipping-from {
+  margin-top: 2rem;
+}
+
 
 input[type=file] {
     border: 1.2px solid;

@@ -90,6 +90,7 @@ i {
         //padding-top: 1rem;
         font-size: 1.4rem;
     }
+
     // .product-card {
     //     padding: 2.5rem !important;
     //     // width: 100%;
@@ -109,7 +110,7 @@ i {
 
     .qty {
         // padding: .4rem .8rem;
-        margin-block: 1.4rem !important;   
+        margin-block: 1.4rem !important;
     }
 
     .review {
@@ -120,6 +121,12 @@ i {
     .login-form {
         // width: 88%;
     }
+
+    //orderScreen
+    .order_id {
+        font-size: 1.5rem !important;
+    }
+
 }
 
 // Mobile landscape
@@ -133,7 +140,7 @@ i {
         // justify-content: center;
         // align-items: flex-start;
     }
-    
+
 
     // navbar
     .navbar {
@@ -180,14 +187,76 @@ i {
     }
 
     //login
-    .login-container { 
-        font-size: 1.4rem;
+    .login-container {
+        font-size: 1.6rem !important;
         padding-inline: 7rem !important;
     }
 
     .login-form {
         // padding-inline: 2rem !important;
     }
+
+    //register
+    .register-container {
+        font-size: 1.6rem !important;
+        padding-inline: 7rem !important;
+    }
+
+    //checkOutSteps
+    .checkout-step-navbar {
+        font-size: 1.6rem !important;
+    }
+
+    //shippingScreen
+    .shipping-from {
+        font-size: 1.6rem !important;
+        padding-inline: 5rem !important;
+    }
+
+    //payment
+    .payment-container {
+        padding-inline: 7rem;
+        justify-content: flex-start !important;
+    }
+
+    .payment-form {
+        font-size: 1.6rem;
+        //padding-inline: 12rem !important;
+    }
+
+    //placeOrder
+    .place-order-container {
+        padding-inline: 6rem !important;
+        font-size: 1.6rem !important;
+    }
+
+    //orderScreen
+    .order_id {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+    }
+
+
+    .delivery-message {
+       
+        font-size: 1.5rem !important;
+    }
+
+    .order-list-screen-container {
+        padding-inline: 3rem !important;
+    }
+
+    //productListScreen
+    .create-product-wrapper {
+        padding-inline: 3rem !important;
+        font-size: 1.5rem !important;
+
+    }
+
+    .product-edit-screen .goback-btn {
+        margin-left: 7rem !important;
+    }
+    
 }
 
 // Tablet portrait
@@ -197,7 +266,7 @@ i {
     .home {
         padding-inline: 6rem !important;
     }
-    
+
     // navbar
     .navbar {
         display: flex;
@@ -242,11 +311,11 @@ i {
         width: inherit !important;
         overflow: hidden;
     }
-    
+
 
     //products
     .product {
-        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 3.5rem !important;
     }
 
@@ -273,7 +342,8 @@ i {
     .cart {
         grid-column: 1/3 !important;
     }
-     .cart-wrapper {
+
+    .cart-wrapper {
         // width: auto;
         width: 92%;
         margin-bottom: 1.5rem;
@@ -284,7 +354,7 @@ i {
         align-items: center !important;
         justify-content: flex-start !important;
     }
-    
+
     .cart-image {
         width: 7.5rem !important;
         height: 7.5rem;
@@ -334,35 +404,114 @@ i {
     // .add-to-cart {
     //     grid-column: 8/-1;
     // }
-    
+
     .review {
-        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-inline: 6rem !important;
     }
-    
+
     //login
-    .login-container { 
+    .login-container {
         padding-inline: 15rem !important;
         // width: 100%;
+    }
+
+    //register
+    .register-container {
+        padding-inline: 10rem !important;
+    }
+
+    .register-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    //shippingScreen
+    .shipping-from {
+        padding-inline: 15rem !important;
+    }
+
+    //payment
+    .payment-container {
+        padding-inline: 15rem !important;
+    }
+
+    //orderItems
+    .order-item {
+        // padding-block: 2rem;
+        // padding-inline: 2rem;
+        // margin-inline: 10rem;
+        // gap: 1.4rem;
+        display: grid !important;
+        align-items: center !important;
+        justify-content: center;
+        grid-template-columns: 4.5rem repeat(4, minmax(0, 1fr));
+        // row-gap: 2rem;
+        column-gap: 1rem !important;
+    }
+
+    .item-image {
+        width: 4.5rem !important;
+        height: 4.5rem;
+        // width: fit-content;
+        // grid-column: 1/2;
+    }
+
+    .item-name {
+        grid-column: 2/4;
+    }
+
+    .item-price {
+        grid-column: 4/-1;
+    }
+
+    // //orderSummary
+    // .order-summary {
+    //     margin-inline: 8rem;
+    // }
+
+    //placeOrder
+    .place-order-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .product-summary {
+        grid-column: 1/3;
+    }
+
+    //orderScreen
+    .order_id {
+        font-size: 2.5rem !important;
+        font-weight: 900 !important;
+    }
+
+    .order-list-screen-container {
+        padding-inline: 6rem !important;
+    }
+
+    //productListScreen
+    .create-product-wrapper {
+        padding-inline: 6rem !important;
     }
 }
 
 // Tablet landscape
 @media screen and (min-width: 940px) {
 
-     //home
-     .home {
+    //home
+    .home {
         padding-inline: 6rem !important;
     }
-    
+
     // navbar
     .navbar {
         padding-inline: 6rem !important;
     }
-    
+
     //products
     .product {
-        grid-template-columns: repeat(3, minmax(0,1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.6rem !important;
     }
 
@@ -407,9 +556,46 @@ i {
     }
 
     //login
-    .login-container { 
+    .login-container {
         padding-inline: 24rem !important;
     }
+
+    //register
+    .register-container {
+        padding-inline: 20rem !important;
+    }
+
+    //shippingScreen
+    .shipping-from {
+        padding-inline: 20rem !important;
+    }
+
+    //payment
+    .payment-container {
+        padding-inline: 22rem !important;
+    }
+
+    //placeOrder
+    .place-order-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 1rem 3rem;
+        font-size: 1.4rem;
+    }
+
+    .product-summary {
+        grid-column: 1/3;
+    }
+
+    //orderSummary
+    .order-summary {
+        margin-inline: 0rem;
+    }
+
+    .order-list-screen-container {
+        padding-inline: 6rem !important;
+    }
+
 }
 
 
@@ -420,20 +606,20 @@ i {
         // padding-inline: 10rem !important;
         padding-inline: 8rem !important;
     }
-    
+
     // navbar
     .navbar {
         //padding-inline: 10rem !important;
         padding-inline: 8rem !important;
     }
-    
+
     //products
-     .product {
-        grid-template-columns: repeat(4, minmax(0,1fr));
+    .product {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     //cart
-     .cart-wrapper {
+    .cart-wrapper {
         width: 82% !important;
     }
 
@@ -472,17 +658,42 @@ i {
         grid-column: 7/-1 !important;
     }
 
-     //login
-     .login-container { 
+    //login
+    .login-container {
         padding-inline: 28rem !important;
     }
+
+    //register
+    .register-container {
+        padding-inline: 25rem !important;
+    }
+
+    //shippingScreen
+    .shipping-from {
+        padding-inline: 24rem !important;
+    }
+
+    //payment
+    .payment-container {
+        padding-inline: 25rem !important;
+    }
+
+    .order-list-screen-container {
+        padding-inline: 6rem !important;
+    }
+
+    //productListScreen
+    .product-edit-screen .goback-btn {
+        margin-left: 8rem !important;
+    }
+
 }
 
 @media screen and (min-width: 1280px) {
 
     //products
     .product {
-        grid-template-columns: repeat(5, minmax(0,1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     //cart
@@ -511,7 +722,7 @@ i {
     }
 
     //login
-    .login-container { 
+    .login-container {
         // width: 90rem;
         padding-inline: 40rem !important;
     }
@@ -519,5 +730,28 @@ i {
     .login-form {
         // width: 90rem;
     }
-    
+
+    //register
+    .register-container {
+        padding-inline: 34rem !important;
+    }
+
+    //shippingScreen
+    .shipping-from {
+        padding-inline: 35rem !important;
+    }
+
+    //payment
+    .payment-container {
+        padding-inline: 38rem !important;
+    }
+
+    .order-list-screen-container {
+        padding-inline: 18rem !important;
+    }
+
+    //productListScreen
+    .create-product-wrapper {
+        padding-inline: 18rem !important;
+    }
 }
